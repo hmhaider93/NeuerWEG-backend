@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mailchimp = require('@mailchimp/mailchimp_marketing');
 const apiKeys = require('./apiKeys');
 const app = express();
-const port = process.env.PORT;
+const port = 3000;
 
 //setting mail chimp configurations
 mailchimp.setConfig({
@@ -52,4 +52,4 @@ app.post('/', function(req,res){
 
 
 
-app.listen(port || 3000, () => console.log(`Example app listening on port port!`))
+app.listen(process.env.PORT, () => console.log(`Example app listening on port port!`))
